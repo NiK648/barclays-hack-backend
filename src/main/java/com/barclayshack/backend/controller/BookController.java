@@ -25,4 +25,9 @@ public class BookController {
 		return service.fetchBooks(pageInfo);
 	}
 
+	@GetMapping("/test")
+	public String fetchBooks() {
+		return "testing my app";
+	}
+
 }

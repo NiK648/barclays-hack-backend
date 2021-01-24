@@ -29,9 +29,10 @@ public class BarclaysHackBackendApplication {
 		};
 	}
 	
-	@Bean
-	public WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> webServerFactoryCustomizer() {
-		return factory -> factory.setContextPath("/barclays-backend");
-	}
+	/*
+	 * @Bean public WebServerFactoryCustomizer<ConfigurableServletWebServerFactory>
+	 * webServerFactoryCustomizer() { return factory ->
+	 * factory.setContextPath("/barclays-backend"); }
+	 */
 
 }
