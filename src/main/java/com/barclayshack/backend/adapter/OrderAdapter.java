@@ -77,7 +77,7 @@ public class OrderAdapter {
 				stmt.setInt(1, order.getId());
 				stmt.setInt(2, book.getId());
 				stmt.setString(3, book.getTitle());
-				stmt.setInt(5, paymentInfo.getCount().get(book.getId()));
+				stmt.setInt(4, paymentInfo.getCount().get(book.getId()));
 				stmt.setInt(5, book.getPrice());
 				stmt.addBatch();
 			}
