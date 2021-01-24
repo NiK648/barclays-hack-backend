@@ -1,10 +1,14 @@
 package com.barclayshack.backend.service;
 
+import java.util.List;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.barclayshack.backend.adapter.OrderAdapter;
 import com.barclayshack.backend.beans.Book;
+import com.barclayshack.backend.beans.Order;
 import com.barclayshack.backend.beans.PaymentInfo;
 import com.instamojo.wrapper.api.ApiContext;
 import com.instamojo.wrapper.api.Instamojo;
@@ -16,6 +20,9 @@ import com.instamojo.wrapper.model.PaymentOrderResponse;
 
 @Service
 public class PaymentService {
+
+	@Autowired
+	private OrderAdapter adapter;
 
 	public PaymentOrderResponse createPaymentOrder(PaymentInfo paymentInfo) {
 		/*
@@ -43,9 +50,10 @@ public class PaymentService {
 
 		order.setAmount(Double.valueOf(amount));
 		order.setDescription("This is a test transaction.");
-		order.setRedirectUrl("http://localhost:4200/barclays-hack-app/order");
-		// order.setWebhookUrl("http://www.someurl.com/");
+		order.setRedirectUrl("http://localhost:4200/order");
 		order.setTransactionId(UUID.randomUUID().toString());
+
+		adapter.addOrder(paymentInfo, Double.valueOf(amount), "pending", order.getTransactionId());
 
 		PaymentOrderResponse paymentOrderResponse = null;
 
@@ -62,6 +70,8 @@ public class PaymentService {
 		} catch (ConnectionException e) {
 			System.out.println(e.getMessage());
 		}
+
+		// adapter.updatePaymentId(paymentOrderResponse);
 
 		return paymentOrderResponse;
 	}
@@ -88,6 +98,14 @@ public class PaymentService {
 			System.out.println(e.getMessage());
 		}
 		return paymentOrder;
+	}
+
+	public void updatePaymentId(String paymentId, String transactionid) {
+		adapter.updatePaymentId(paymentId, transactionid);
+	}
+
+	public List<Order> getOrders(String username) {
+		return adapter.getOrders(username);
 	}
 
 }

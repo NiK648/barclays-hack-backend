@@ -10,6 +10,7 @@ public class PaymentInfo {
 	private String name;
 	private String email;
 	private String phone;
+	private String username;
 
 	public List<Book> getItems() {
 		return items;
@@ -49,6 +50,14 @@ public class PaymentInfo {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 }

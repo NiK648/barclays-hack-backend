@@ -72,6 +72,7 @@ public class LoginAdapter {
 			rs = stmt.getResultSet();
 			if (rs.next()) {
 				result = new User();
+				result.setUsername(rs.getString("username"));
 				result.setName(rs.getString("name"));
 				result.setEmail(rs.getString("email"));
 				result.setPhone(rs.getString("phone"));
