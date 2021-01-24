@@ -50,7 +50,8 @@ public class PaymentService {
 
 		order.setAmount(Double.valueOf(amount));
 		order.setDescription("This is a test transaction.");
-		order.setRedirectUrl("http://localhost:4200/order");
+		//order.setRedirectUrl("http://localhost:4200/order");
+		order.setRedirectUrl("https://barclays-hack-app.herokuapp.com/order");
 		order.setTransactionId(UUID.randomUUID().toString());
 
 		adapter.addOrder(paymentInfo, Double.valueOf(amount), "pending", order.getTransactionId());
