@@ -28,13 +28,15 @@ public class BarclaysHackBackendApplication {
 				registry.addMapping("/update").allowedOrigins("https://barclays-hack-app.herokuapp.com");
 				registry.addMapping("/orders").allowedOrigins("http://localhost:4200");
 				
-				registry.addMapping("/listItems").allowedOrigins("http://localhost:4200");
-				registry.addMapping("/payment").allowedOrigins("http://localhost:4200");
-				registry.addMapping("/details").allowedOrigins("http://localhost:4200");
-				registry.addMapping("/register").allowedOrigins("http://localhost:4200");
-				registry.addMapping("/login").allowedOrigins("http://localhost:4200");
-				registry.addMapping("/update").allowedOrigins("http://localhost:4200");
-				registry.addMapping("/orders").allowedOrigins("http://localhost:4200");
+				/*
+				 * registry.addMapping("/listItems").allowedOrigins("http://localhost:4200");
+				 * registry.addMapping("/payment").allowedOrigins("http://localhost:4200");
+				 * registry.addMapping("/details").allowedOrigins("http://localhost:4200");
+				 * registry.addMapping("/register").allowedOrigins("http://localhost:4200");
+				 * registry.addMapping("/login").allowedOrigins("http://localhost:4200");
+				 * registry.addMapping("/update").allowedOrigins("http://localhost:4200");
+				 * registry.addMapping("/orders").allowedOrigins("http://localhost:4200");
+				 */
 			}
 		};
 	}
