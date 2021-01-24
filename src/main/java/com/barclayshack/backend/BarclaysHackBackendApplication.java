@@ -26,7 +26,7 @@ public class BarclaysHackBackendApplication {
 				registry.addMapping("/register").allowedOrigins("https://barclays-hack-app.herokuapp.com");
 				registry.addMapping("/login").allowedOrigins("https://barclays-hack-app.herokuapp.com");
 				registry.addMapping("/update").allowedOrigins("https://barclays-hack-app.herokuapp.com");
-				registry.addMapping("/orders").allowedOrigins("http://localhost:4200");
+				registry.addMapping("/orders").allowedOrigins("https://barclays-hack-app.herokuapp.com");
 				
 				/*
 				 * registry.addMapping("/listItems").allowedOrigins("http://localhost:4200");
